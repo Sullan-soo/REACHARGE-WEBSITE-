@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24104f">
+  <title>Diamond Top-Up Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">◆</span><span>DIAMOND <b>TOP-UP</b><small>FAST • SIMPLE • SECURE</small></span></a>
+    <span class="secure"><span class="dot"></span> Secure checkout</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">WELCOME TO OUR STORE</span>
+        <h1>Top up your game.<br><em>Level up faster.</em></h1>
+        <p>Choose your package, enter your player details and continue to payment.</p>
+        <div class="hero-points"><span>✓ Quick process</span><span>✓ Easy payment</span><span>✓ Support available</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="diamond">◆</div><div class="spark s1">✦</div><div class="spark s2">✧</div></div>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel">
+        <div class="section-head"><div><span class="step">01</span><h2>Choose your package</h2></div><span class="muted">Select one plan</span></div>
+        <div class="plans" id="plans">
+          <button class="plan selected" data-name="Monthly VIP" data-price="200"><span class="plan-icon">👑</span><span><b>Monthly VIP</b><small>30 days</small></span><strong>₹200</strong></button>
+          <button class="plan" data-name="5 Weekly VIP" data-price="400"><span class="plan-icon">💎</span><span><b>5 Weekly VIP</b><small>Weekly package</small></span><strong>₹400</strong></button>
+          <button class="plan" data-name="1000 Diamonds" data-price="600"><span class="plan-icon">🔹</span><span><b>1000 Diamonds</b><small>Diamond bundle</small></span><strong>₹600</strong></button>
+          <button class="plan" data-name="5000 Diamonds" data-price="1000"><span class="plan-icon">💠</span><span><b>5000 Diamonds</b><small>Diamond bundle</small></span><strong>₹1,000</strong></button>
+        </div>
+      </div>
+
+      <aside class="panel details">
+        <div class="section-head"><div><span class="step">02</span><h2>Player details</h2></div></div>
+        <label for="playerId">Player ID</label>
+        <input id="playerId" type="text" placeholder="Enter your Player ID" autocomplete="off">
+        <label for="playerName">Player name <span class="optional">(optional)</span></label>
+        <input id="playerName" type="text" placeholder="Enter player name" autocomplete="off">
+        <div class="summary">
+          <div><span>Selected package</span><b id="summaryName">Monthly VIP</b></div>
+          <div class="total"><span>Total amount</span><strong id="summaryPrice">₹200</strong></div>
+        </div>
+        <button class="primary" id="continueBtn">CONTINUE TO SCAN <span>→</span></button>
+        <p class="tiny">Payment QR is shown only after you press Continue.</p>
+      </aside>
+    </section>
+
+    <section class="payment panel" id="paymentPanel" hidden>
+      <div class="section-head"><div><span class="step">03</span><h2>Scan & pay</h2></div><button class="text-button" id="backBtn">← Back</button></div>
+      <div class="payment-layout">
+        <div class="qr-wrap"><div class="qr-frame"><img src="assets/payment-qr.png" alt="Payment QR code"></div><span class="qr-caption">SCAN THIS QR CODE TO PAY</span></div>
+        <div class="payment-info">
+          <span class="pay-label">AMOUNT TO PAY</span>
+          <div class="pay-amount" id="payAmount">₹200</div>
+          <p>Open your preferred UPI scanner app and scan the QR code above. Complete the payment, then submit your transaction reference below.</p>
+          <label for="txnId">UPI transaction ID / UTR</label>
+          <input id="txnId" type="text" placeholder="Enter transaction reference" autocomplete="off">
+          <button class="primary" id="submitBtn">SUBMIT PAYMENT DETAILS <span>→</span></button>
+          <p class="tiny" id="status" aria-live="polite">Do not close this page until you have submitted your details.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice"><span>ⓘ</span><p><b>Payment note:</b> Submitting a transaction reference does not automatically verify payment. Orders must be checked against the receiving UPI account before any top-up is delivered.</p></section>
+  </main>
+  <footer>© <span id="year"></span> Diamond Top-Up Store <span>•</span> Customer support: contact the store administrator</footer>
+  <script src="script.js"></script>
+</body>
+</html>
